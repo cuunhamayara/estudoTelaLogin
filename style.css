@@ -1,0 +1,139 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    background-color: #201b2c;
+    display: flex;
+    justify-content: center;    /* centraliza as coisas no eixo x - horizontal. flex start justifica as coisas para a esquerda, felx end justifica para a direita, center para ficar tudo no centro, space between que cria espaço igual para todos os elementos e space around que cria espaço igual so que menor*/
+    align-items: center;  /* justifica no eixo y */
+}
+
+.left-login{
+    width: 50vw;   /* para ocupar 50% da largura da tela */
+    height: 100vh;  /* para ocupar 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   /*  para deixar a imagem abaixo do h1 e nao ao lado, por causa do display flex   */
+
+}
+
+.left-login > h1 {
+    color: #77ffc0;
+    font-size: 3vw;
+}
+
+.left-login > img {
+    width: 25vw;
+}
+
+.right-login {
+    width: 50vw;   /* para ocupar 50% da largura da tela */
+    height: 100vh;  /* para ocupar 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%;   /* % em relação a div e nao a tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px; /* margens para dentro do componente. o primeiro valor refere-se ao eixo y. se colocar so um valor, ele ja funciona para ambos os eixos  */
+    background-color: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;    /* primeiro valor refere-se ao x (positivo vai pra direita, negativo vai pra esquerda), o segundo valor refere-se ao y, o terceiro valor é o blur e o quarto é a cor  */
+}
+
+.card-login > h1 {
+    color: #00ff88;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.text-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;  /* inverte as bolas: o align itens passa a mexer no eixo x e o justify content passa a mexer no eixo y  */
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px; /*primeiro valor é o eixo Y e o segundo, X */
+}
+
+.text-field > input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none; /* caixinha que fica ao redor quando clica no input */
+    box-sizing: border-box;  /*limitar o tamanho do elemento, para nao ultrapassar o elemento pai */
+}
+
+.text-field > label {
+    color: #f0ffffde;
+    margin-bottom: 10px;  /* margem para baixo */
+}
+
+.text-field > input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background-color: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+.btn-login:hover{
+    background-color: #77ffc0;
+}
+
+@media only screen and (max-width: 950px) { /*enquanto a tela for menor do q 950px, adicione: */
+    .card-login{
+        width: 85%;
+    }
+}
+@media only screen and (max-width: 600px) { /* para celular e telas menores */
+    .main-login{
+        flex-direction: column;
+    }
+    .left-login > h1 {
+        display: none;
+    }
+    .left-login{
+        width: 90%;
+        height: auto;
+    }
+    .right-login{
+        width: 90%;
+        height: auto;
+    }
+    .left-login > img {
+        width: 30vh;
+    }
+}    
